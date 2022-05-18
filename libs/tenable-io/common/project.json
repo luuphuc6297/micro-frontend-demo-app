@@ -1,0 +1,23 @@
+{
+  "root": "libs/tenable-io/common",
+  "sourceRoot": "libs/tenable-io/common/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/tenable-io/common/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/tenable-io/common"],
+      "options": {
+        "jestConfig": "libs/tenable-io/common/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

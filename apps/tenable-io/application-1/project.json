@@ -1,0 +1,41 @@
+{
+  "root": "apps/tenable-io/application-2",
+  "sourceRoot": "apps/tenable-io/application-2/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+        "executor": "@nrwl/workspace:run-commands",
+        "options": {
+          "commands": [
+            "npm run dev"
+          ],
+          "cwd": "apps/tenable-io/application-1"
+        }
+    },
+    "build": {
+        "executor": "@nrwl/workspace:run-commands",
+        "options": {
+          "commands": [
+            "npm run build"
+          ],
+          "cwd": "apps/tenable-io/application-1"
+        }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/tenable-io/application-1/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/tenable-io/application-1"],
+      "options": {
+        "jestConfig": "apps/tenable-io/application-1/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

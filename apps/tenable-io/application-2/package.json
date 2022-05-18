@@ -1,0 +1,9 @@
+{
+  "name": "application2",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "name=application-2 webpack --config=../../../tools/webpack.config.js --mode production",
+    "dev": "name=application-2 webpack-dev-server --config=../../../tools/webpack.config.js"
+  }
+}
